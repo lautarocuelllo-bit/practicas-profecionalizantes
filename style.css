@@ -1,0 +1,298 @@
+:root {
+    --naranja: #FF6600;
+    --negro: #121212;
+    --blanco: #FFFFFF;
+    --gris: #1F1F1F;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--negro); color: var(--blanco); line-height: 1.6; }
+
+/* Navegación */
+header {
+    background: rgba(0,0,0,0.9);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { font-weight: bold; font-size: 1.5rem; color: var(--naranja); }
+
+.nav-links { display: flex; list-style: none; }
+
+.nav-links li a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover { color: var(--naranja); }
+
+.btn-cta {
+    background: var(--naranja);
+    color: var(--blanco);
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+
+
+.btn-main {
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6600 100%); 
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4); /* Sombra suave naranja */
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-main:hover {
+    transform: translateY(-3px); /* Se eleva un poco al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(255, 102, 0, 0.6); /* Brillo más intenso */
+    filter: brightness(1.1);
+}
+
+.btn-main:active {
+    transform: translateY(1px); /* Efecto de "click"[cite: 2] */
+}
+
+/* Secciones */
+section { padding: 80px 10% 40px; text-align: center; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--gris);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.img-placeholder {
+    height: 150px;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.card button {
+    background: var(--naranja);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* WhatsApp Flotante */
+.wa-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    box-shadow: 2px 2px 3px #000;
+}
+
+/* Contenedor de la sección */
+.contact {
+    background-color: #121212; /* Fondo negro profundo */
+    padding: 120px 10%;
+    color: white;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+    align-items: center;
+}
+
+.contact-container h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.contact-icons a {
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-icons a:hover {
+    transform: translateY(-5px);
+    background: rgba(255,102,0,0.18);
+}
+
+.contact-icons svg {
+    width: 42px;
+    height: 42px;
+    color: #fff;
+}
+
+.contact h3 {
+    font-size: 1.7rem;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.contact .map {
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.contact .map p {
+    font-size: 1.15rem;
+    color: #ccc;
+}
+
+/* Layout del formulario */
+#contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Nombre y Email a la par */
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo de los campos (Inputs y Textarea) */
+#contact-form input, 
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: #1f1f1f; /* Gris muy oscuro para contraste */
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* El mensaje ocupa las dos columnas */
+#contact-form textarea {
+    grid-column: span 2;
+    height: 150px;
+    resize: none;
+}
+
+/* Efecto al hacer clic en los campos */
+#contact-form input:focus, 
+#contact-form textarea:focus {
+    border-color: #FF6600; /* Borde naranja al seleccionar */
+}
+
+/* Estilo del botón enviar */
+#contact-form button {
+    grid-column: span 2; /* Botón a lo ancho */
+    background-color: #FF6600; /* Naranja corporativo[cite: 2] */
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.1rem;
+}
+
+#contact-form button:hover {
+    background-color: #e65c00;
+}
+
+/* Estilo de la ubicación */
+.location-text {
+    margin-top: 30px;
+    color: #aaa;
+    font-style: italic;
+    font-size: 1.1rem;}
+
+.page-logo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 900;
+}
+
+.page-logo img {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .page-logo {
+        width: 60px;
+        bottom: 15px;
+        left: 15px;
+        opacity: 0.18;
+    }}   
